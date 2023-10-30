@@ -1,0 +1,21 @@
+public class Role
+{
+    private string roleId;
+    private string roleName;
+
+    public Role(string id, string name)
+    {
+        roleId = id;
+        roleName = name;
+    }
+
+    public string get_role_id()
+    {
+        return roleId;
+    }
+
+    public string get_role_name()
+    {
+        return roleName;
+    }
+}

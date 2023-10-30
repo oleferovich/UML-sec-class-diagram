@@ -1,0 +1,16 @@
+public class access_level
+{
+    private int level;
+
+    // Class constructor
+    public access_level(int level)
+    {
+        this.level = level;
+    }
+
+    // Method to get access level
+    public int get_level()
+    {
+        return level;
+    }
+}

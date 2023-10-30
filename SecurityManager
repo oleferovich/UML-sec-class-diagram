@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+
+public class SecurityManager
+{
+    private Dictionary<string, List<string>> users; // Storage of users and their roles
+
+    public SecurityManager()
+    {
+        users = new Dictionary<string, List<string>>();
+    }
+
+    // Method for adding a user
+    public void add_user(string username)
+    {
+        if (!users.ContainsKey(username))
+        {
+            users.Add(username, new List<string>());
+            Console.WriteLine("User '{0}' add.", username);
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' is exists.", username);
+        }
+    }
+
+    // Method for deleting a user
+    public void remove_user(string username)
+    {
+        if (users.ContainsKey(username))
+        {
+            users.Remove(username);
+            Console.WriteLine("User '{0}' delete.", username);
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' not founded.", username);
+        }
+    }
+
+    // Method for adding a role to a user
+    public void add_user_role(string username, string role)
+    {
+        if (users.ContainsKey(username))
+        {
+            if (!users[username].Contains(role))
+            {
+                users[username].Add(role);
+                Console.WriteLine("User '{0}' has received the role '{1}'.", username, role);
+            }
+            else
+            {
+                Console.WriteLine("Role '{0}'is already assigned to the user '{1}'.", role, username);
+            }
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' not founded.", username);
+        }
+    }
+
+    // Method for removing a role from a user
+    public void remove_user_role(string username, string role)
+    {
+        if (users.ContainsKey(username))
+        {
+            if (users[username].Contains(role))
+            {
+                users[username].Remove(role);
+                Console.WriteLine("Role '{0}' was deleted from user '{1}'.", role, username);
+            }
+            else
+            {
+                Console.WriteLine("User '{0}' hasnt role '{1}'.", username, role);
+            }
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' nit founded.", username);
+        }
+    }
+
+    // Method to get user information
+    public void get_user(string username)
+    {
+        if (users.ContainsKey(username))
+        {
+            Console.WriteLine("Info about user '{0}':", username);
+            foreach (string role in users[username])
+            {
+                Console.WriteLine("Role: {0}", role);
+            }
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' not founded.", username);
+        }
+    }
+}

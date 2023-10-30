@@ -1,0 +1,35 @@
+
+using System;
+
+public class Robot_RPA
+{
+    private string robot_ID;
+    private string password;
+    private bool isAuthenticated;
+
+    public string Get_Robot_ID()
+    {
+        return robot_ID;
+    }
+
+    public void Set_Password(string newPassword)
+    {
+        password = newPassword;
+    }
+
+    public bool Authenticate()
+    {
+        // Checking if the password matches
+        if (password == "example_password")
+        {
+            isAuthenticated = true;
+        }
+        else
+        {
+            isAuthenticated = false;
+        }
+
+        return isAuthenticated;
+    }
+}
+

@@ -1,0 +1,28 @@
+public class User
+{
+    private string username;
+    private string password;
+    private string role;
+
+    public bool Authenticate()
+    {
+        // There may be logic for checking authorization
+        //let's check that the username and password are not empty
+        return !string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password);
+    }
+
+    public void SetUsername(string username)
+    {
+        this.username = username;
+    }
+
+    public void SetPassword(string password)
+    {
+        this.password = password;
+    }
+
+    public void SetRole(string role)
+    {
+        this.role = role;
+    }
+}

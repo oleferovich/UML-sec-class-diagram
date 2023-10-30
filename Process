@@ -1,0 +1,32 @@
+access_level access = new access_level(5); 
+int level = access.get_level(); 
+
+
+public class Process
+{
+    private string processId;
+    private string processName;
+    private level level;
+
+    public Process(string id, string name, level level)
+    {
+        processId = id;
+        processName = name;
+        level = level;
+    }
+
+    public string GetProcessId()
+    {
+        return processId;
+    }
+
+    public string GetProcessName()
+    {
+        return processName;
+    }
+
+    public AccessLevel GetAccessLevel()
+    {
+        return level;
+    }
+}

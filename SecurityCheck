@@ -1,0 +1,38 @@
+using System;
+
+namespace RpaSecurity
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Your RPA Code
+            // ...
+
+            // Malicious activity check
+            if (CheckForMaliciousActions())
+            {
+                Console.WriteLine("Malicious activity detected! The program will be stopped.");
+                // You can implement additional logic here, such as sending a security alert.
+                return;
+            }
+
+            // If the program has passed the security check, the RPA action can be performed
+            Console.WriteLine("The RPA action is executed...");
+            // ...
+
+            Console.WriteLine("The RPA action succeeded!");
+
+            Console.ReadLine();
+        }
+
+        static bool CheckForMaliciousActions()
+        {
+            // Here you can check for malicious actions.
+            // This may include analysis of processes, files or network connections used, as well as verification of critical data.
+
+            // In this example, simply return false to show the success of the program.
+            return false;
+        }
+    }
+}
